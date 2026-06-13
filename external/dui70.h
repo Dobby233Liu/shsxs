@@ -12,9 +12,9 @@ public:
 
 	class DUIXmlParser {
 		public:
-			__declspec(dllimport) static long Create(DUIXmlParser** ppParserOut, Value* pfnGetSheetCallback(unsigned short const *,void *), void* pGetSheetContext, void pfnErrorCallback(unsigned short const*, unsigned short const *, int, void*), void* pErrorContext);
-			__declspec(dllimport) long SetXML(unsigned short const* pBuffer, HINSTANCE hResourceInstance, HINSTANCE hControlsInstance);
-			__declspec(dllimport) void Destroy();
+			__declspec(dllimport) static long __stdcall Create(DUIXmlParser** ppParserOut, Value* __stdcall pfnGetSheetCallback(unsigned short const *,void *), void* pGetSheetContext, void __stdcall pfnErrorCallback(unsigned short const*, unsigned short const *, int, void*), void* pErrorContext);
+			__declspec(dllimport) long __thiscall SetXML(unsigned short const* pBuffer, HINSTANCE hResourceInstance, HINSTANCE hControlsInstance);
+			__declspec(dllimport) void __thiscall Destroy();
 	};
 };
 

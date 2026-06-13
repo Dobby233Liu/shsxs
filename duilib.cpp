@@ -120,12 +120,12 @@ HRESULT CDUIResourceManager::s_DebugPrettyPrintXMLToFile(LPCSTR pszXML, IStream*
 				--indentLevel;
 				pszNextElement = pszElementEnd + 2;
 			}
-			else 
+			else
 			{
 				if (chElementEnd == '\\')
 					pszElementEnd += 2;
 				++pszElementEnd;
-			}			
+			}
 		}
 		if (pszNextElement >= xmlEnd)
 			break;
@@ -139,7 +139,9 @@ HRESULT CDUIResourceManager::_DebugSaveDUIResourceToFile(LPWSTR szDUIPath)
 {
 	LPCSTR pszXML;
 	DWORD cbXMLSize;
-	HRESULT result = GetModuleResourceData(_hInst, (LPCWSTR)_uResourceID, L"UIFILE", &pszXML, &cbXMLSize);
+	LPCWSTR pszInputResourceID;
+	pszInputResourceID = (LPCWSTR)MAKEINTRESOURCE(_uResourceID);
+	HRESULT result = GetModuleResourceData(_hInst, pszInputResourceID, L"UIFILE", &pszXML, &cbXMLSize);
 	if (!SUCCEEDED(result))
 		return result;
 	CComPtr<IStream> stream;
@@ -275,7 +277,9 @@ HRESULT CDUIResourceManager::DUI_LoadUIFileFromResources(HINSTANCE hModuleInstan
 {
 	LPCSTR ansiBuf;
 	DWORD ansiSize;
-	HRESULT result = GetModuleResourceData(hModuleInstance, (LPCWSTR)uFileID, L"UIFILE", &ansiBuf, &ansiSize);
+	LPCWSTR pszInputResourceID;
+	pszInputResourceID = (LPCWSTR)MAKEINTRESOURCE(uFileID);
+	HRESULT result = GetModuleResourceData(hModuleInstance, pszInputResourceID, L"UIFILE", &ansiBuf, &ansiSize);
 	if (!SUCCEEDED(result))
 		return result;
 	DWORD uniSize = (ansiSize + 1) * 2;
