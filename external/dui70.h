@@ -1,3 +1,5 @@
+#include <Windows.h>
+
 #ifndef DUI70_H
 #define DUI70_H
 
