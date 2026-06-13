@@ -48,13 +48,13 @@ EXT_PLATFORM = arm
 LINK = link
 # /nodefaultlibs makes link ignore %LIB%? or is it just the same bug as above
 LFLAGS = $(LFLAGS) /nologo \
-		/subsystem:console,6.10 /dll /noentry /release \
+		/subsystem:console,6.10 /dll /release \
 		/nodefaultlib /libpath:"$(VC_LTL_LIB_PATH)" /libpath:"$(SDK_LIB_PATH)" /libpath:"external\$(EXT_PLATFORM)"
 
 LIBTOOL = lib
 
 LIBS = \
-	libcmt.lib ucrt.lib vcruntime.lib \
+	libcmt.lib ucrt.lib libucrt.lib vcruntime.lib libvcruntime.lib \
 	kernel32.lib user32.lib \
 	advapi32.lib ole32.lib uuid.lib \
 	shell32.lib shlwapi.lib \
