@@ -27,7 +27,6 @@ CDEF = /DWIN32 /D_WIN32 /DWINVER=0x601 /D_WINVER_WINNT=0x601 /DUNICODE /D_ARM_WI
 CPPFLAGS = $(CPPFLAGS) /nologo /Ox /W3 /WX $(CDEF) /DNDEBUG /LD /MT /Zl
 RFLAGS = $(RFLAGS) /nologo $(CDEF)
 
-# /nodefaultlibs makes link ignore %LIB%? or is it just the same bug as above
 SDK_LIB_PATH = $(WINDOWSSDKDIR)lib\$(WINDOWSSDKLIBVERSION)um\$(PLATFORM)
 
 VC_LTL_PLATFORM = $(PLATFORM)
@@ -44,6 +43,7 @@ EXT_PLATFORM = amd64
 !endif
 
 LINK = link
+# /nodefaultlibs makes link ignore %LIB%? or is it just the same bug as above
 LFLAGS = $(LFLAGS) /nologo \
 		/subsystem:console,6.10 /dll /noentry /release \
 		/nodefaultlib /libpath:"$(VC_LTL_LIB_PATH)" /libpath:"$(SDK_LIB_PATH)" /libpath:"external\$(EXT_PLATFORM)"
