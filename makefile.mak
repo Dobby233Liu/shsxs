@@ -37,8 +37,7 @@ EXT_PLATFORM = amd64
 LINK = link
 LFLAGS = $(LFLAGS) /nologo \
 		/subsystem:console,6.10 /dll /noentry /release \
-		/nodefaultlib /libpath:"$(VC_LTL_LIB_PATH)" /libpath:"$(SDK_LIB_PATH)" /libpath:"external\$(EXT_PLATFORM)" \
-		/verbose:lib
+		/nodefaultlib /libpath:"$(VC_LTL_LIB_PATH)" /libpath:"$(SDK_LIB_PATH)" /libpath:"external\$(EXT_PLATFORM)"
 
 LIBS = \
 	libcmt.lib ucrt.lib vcruntime.lib \
@@ -64,7 +63,7 @@ $(OUTDIR):
 	$(RC) $(RFLAGS) /fo"$@" /r $<
 
 $(OUTDIR)\shsxs.dll: $(OUTDIR)\shsxs.obj $(OUTDIR)\duilib.obj $(OUTDIR)\shsxs.res
-	$(LINK) $(LFLAGS) /pdbaltpath:shsxs.pdb /out:"$@" /def:shsxs.def $** $(LIBS)
+	$(LINK) $(LFLAGS) /def:"shsxs.def" /out:"$@" /pdbaltpath:"shsxs.pdb" $** $(LIBS)
 
 $(OUTDIR)\dui70_stub.lib: $(OUTDIR)\dui70_stub.obj
 	$(LIBTOOL) $** /def:"dui70_stub_x86.def" /out:"$@"
