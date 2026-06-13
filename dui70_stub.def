@@ -1,0 +1,10 @@
+NAME dui70.dll
+
+EXPORTS
+InitProcessPriv=InitProcessPriv
+InitThread=InitThread
+UnInitProcessPriv=UnInitProcessPriv
+UnInitThread=UnInitThread
+?Create@DUIXmlParser@DirectUI@@SGJPAPAV12@P6GPAVValue@2@PBGPAX@Z2P6GX11H2@Z2@Z
+?SetXML@DUIXmlParser@DirectUI@@QAEJPBGPAUHINSTANCE__@@1@Z
+?Destroy@DUIXmlParser@DirectUI@@QAEXXZ

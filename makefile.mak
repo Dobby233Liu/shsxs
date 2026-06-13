@@ -65,5 +65,5 @@ $(OUTDIR):
 $(OUTDIR)\shsxs.dll: $(OUTDIR)\shsxs.obj $(OUTDIR)\duilib.obj $(OUTDIR)\shsxs.res
 	$(LINK) $(LFLAGS) /def:"shsxs.def" /out:"$@" /pdbaltpath:"shsxs.pdb" $** $(LIBS)
 
-$(OUTDIR)\dui70_stub.lib: $(OUTDIR)\dui70_stub.obj
-	$(LIBTOOL) $** /def:"dui70_stub_x86.def" /out:"$@"
+$(OUTDIR)\dui70.lib: $(OUTDIR)\dui70_stub.obj
+	$(LIBTOOL) /nologo /def:"dui70_stub.def" /out:"$@" $**

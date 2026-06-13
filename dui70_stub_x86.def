@@ -1,8 +1,0 @@
-EXPORTS
-InitProcessPriv=InitProcessPriv @4027
-InitThread=InitThread @4028
-UnInitProcessPriv=UnInitProcessPriv @4056
-UnInitThread=UnInitThread @4057
-?Create@DUIXmlParser@DirectUI@@SGJPAPAV12@P6GPAVValue@2@PBGPAX@Z2P6GX11H2@Z2@Z @997
-?SetXML@DUIXmlParser@DirectUI@@QAEJPBGPAUHINSTANCE__@@1@Z @3470
-?Destroy@DUIXmlParser@DirectUI@@QAEXXZ @1204
