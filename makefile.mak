@@ -1,6 +1,6 @@
 # This is chaotic (no I will never fix that)
 
-#"D:\tools\Program Files\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x86 8.1 -vcvars_ver=14.0
+#"D:\tools\Program Files\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x64 8.1 -vcvars_ver=14.0
 ## or
 #"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64_arm 8.1
 ##
@@ -41,6 +41,8 @@ VC_LTL_LIB_PATH = $(VC_LTL_ROOT)TargetPlatform\$(LTLWINDOWSTARGETPLATFORMMINVERS
 EXT_PLATFORM = $(VC_LTL_PLATFORM)
 !if "$(EXT_PLATFORM)" == "Win32"
 EXT_PLATFORM = x86
+!else if "$(EXT_PLATFORM)" == "x64"
+EXT_PLATFORM = amd64
 !else if "$(EXT_PLATFORM)" == "ARM"
 EXT_PLATFORM = arm
 !endif
