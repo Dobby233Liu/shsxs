@@ -18,7 +18,7 @@
 # VS2022 vcvarsall fails to find 8.1 SDK includes?
 # also 26100 UCRT headers get picked up for some reason, which use intrinsics that break compilation
 !ifndef W10_10240_SDK_INCLUDES
-W10_1507_SDK_INCLUDES = $(WINDOWSSDKDIR)..\10\Include\10.0.10240.0
+W10_10240_SDK_INCLUDES = $(WINDOWSSDKDIR)..\10\Include\10.0.10240.0
 !endif
 INCLUDE = $(W10_10240_SDK_INCLUDES)\ucrt;$(WINDOWSSDKDIR)include\shared;$(WINDOWSSDKDIR)include\um;$(INCLUDE)
 INCLUDE = $(VC_LTL_ROOT)TargetPlatform\header;$(VC_LTL_ROOT)TargetPlatform\$(LTLWINDOWSTARGETPLATFORMMINVERSION)\header;$(INCLUDE)
