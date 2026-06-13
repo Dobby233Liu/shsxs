@@ -9,18 +9,18 @@
 #nmake /f makefile.mak
 
 !if "$(PLATFORM)" == ""
-!error %Platform% is unset, run vcvarsall and set manually if necessary
+!error %Platform% is unset, run vcvarsall (set manually if necessary)
 !endif
 !if "$(VC_LTL_ROOT)" == ""
 !error VC-LTL environment is not set up, run "VC-LTL helper for nmake.cmd" v5.1.1
 !endif
 
 # VS2022 vcvarsall fails to find 8.1 SDK includes?
-# also it picks up 26100 ucrt headers for some reason, which use intrinsics that will break compilation
-!ifndef W10_1507_SDK
-W10_1507_SDK = $(WINDOWSSDKDIR)..\10\Include\10.0.10240.0
+# also 26100 UCRT headers get picked up for some reason, which use intrinsics that break compilation
+!ifndef W10_10240_SDK_INCLUDES
+W10_1507_SDK_INCLUDES = $(WINDOWSSDKDIR)..\10\Include\10.0.10240.0
 !endif
-INCLUDE = $(W10_1507_SDK)\ucrt;$(WINDOWSSDKDIR)include\shared;$(WINDOWSSDKDIR)include\um;$(INCLUDE)
+INCLUDE = $(W10_10240_SDK_INCLUDES)\ucrt;$(WINDOWSSDKDIR)include\shared;$(WINDOWSSDKDIR)include\um;$(INCLUDE)
 INCLUDE = $(VC_LTL_ROOT)TargetPlatform\header;$(VC_LTL_ROOT)TargetPlatform\$(LTLWINDOWSTARGETPLATFORMMINVERSION)\header;$(INCLUDE)
 
 CDEF = /DWIN32 /D_WIN32 /DWINVER=0x601 /D_WINVER_WINNT=0x601 /DUNICODE /D_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE
