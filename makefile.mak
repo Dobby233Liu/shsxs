@@ -41,19 +41,12 @@ LFLAGS = $(LFLAGS) /nologo \
 		/verbose:lib
 
 LIBS = \
-	libcmt.lib \
-	ucrt.lib \
-	vcruntime.lib \
-	kernel32.lib \
-	advapi32.lib \
-	user32.lib \
-	ole32.lib \
-	uuid.lib \
-	dui70.lib \
-	gdi32.lib \
-	shell32.lib \
-	shlwapi.lib \
-	uxtheme.lib
+	libcmt.lib ucrt.lib vcruntime.lib \
+	kernel32.lib user32.lib \
+	advapi32.lib ole32.lib uuid.lib \
+	shell32.lib shlwapi.lib \
+	gdi32.lib uxtheme.lib \
+	dui70.lib
 
 LIBTOOL = lib
 
