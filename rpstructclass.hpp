@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 struct BAND_DEPENDENCY
 {
   enum ZBID zbid;

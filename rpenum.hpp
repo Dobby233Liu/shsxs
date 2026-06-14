@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 enum POSITION
 {
   POSITION_TOP_LEFT = 0,

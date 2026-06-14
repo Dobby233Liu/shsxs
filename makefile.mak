@@ -23,6 +23,7 @@ UCRT_INCLUDES = $(UNIVERSALCRTSDKDIR)Include\$(UCRTVERSION)^\
 !endif
 INCLUDE = $(UCRT_INCLUDES)ucrt;$(WINDOWSSDKDIR)include\shared;$(WINDOWSSDKDIR)include\um;$(INCLUDE)
 INCLUDE = $(VC_LTL_ROOT)TargetPlatform\header;$(VC_LTL_ROOT)TargetPlatform\$(LTLWINDOWSTARGETPLATFORMMINVERSION)\header;$(INCLUDE)
+# TODO: VC2008 ATL?
 
 CDEF = /DWIN32 /D_WIN32 /DWINVER=0x601 /D_WINVER_WINNT=0x601 /DUNICODE /D_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE
 CPPFLAGS = $(CPPFLAGS) /nologo /Ox /W3 /WX $(CDEF) /DNDEBUG /LD /MT /Zl
@@ -52,7 +53,7 @@ EXT_PLATFORM = arm
 LINK = link
 # /nodefaultlibs makes link ignore %LIB%? or is it just the same bug as above
 LFLAGS = $(LFLAGS) /nologo \
-		/subsystem:console,6.10 /dll /release \
+		/subsystem:windows,6.10 /dll /release \
 		/nodefaultlib /libpath:"$(VC_LTL_LIB_PATH)" /libpath:"$(SDK_LIB_PATH)" /libpath:"external\$(EXT_PLATFORM)"
 
 LIBTOOL = lib

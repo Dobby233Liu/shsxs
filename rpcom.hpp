@@ -1,3 +1,7 @@
+#include "common.hpp"
+#include "rpenum.hpp"
+#include <ShlObj.h>
+
 MIDL_INTERFACE("137BD0F9-6676-41DE-ACC7-D37DD20272D3")
 ICharmWindow : public IUnknown
 {

@@ -1,3 +1,8 @@
+#pragma once
+#include "common.hpp"
+#include "rpenum.hpp"
+#include "rpstructclass.hpp"
+
 static const DWORD g_Charms[30] = {
 	0, 7101, 7106, 7111, 7201, 2,
 	1, 7103, 7108, 7113, 7203, 2,

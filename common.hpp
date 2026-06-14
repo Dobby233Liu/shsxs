@@ -1,6 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+#define UNICODE
 #include <windows.h>
 #include <atlcomcli.h>
 #include <Shlwapi.h>
