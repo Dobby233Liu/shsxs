@@ -1,7 +1,7 @@
-#include <Windows.h>
-
 #ifndef DUI70_H
 #define DUI70_H
+
+#include <Windows.h>
 
 extern "C" __declspec(dllimport) HRESULT __stdcall UnInitThread();
 extern "C" __declspec(dllimport) HRESULT __stdcall InitThread(DWORD nThreadMode);
