@@ -1,13 +1,13 @@
 // shsxs.cpp : Defines the exported functions for the DLL application.
 //
 
-#include "common.h"
+#include "common.hpp"
 #include <ShlObj.h>
-#include "duilib.h"
-#include "rpenum.h"
-#include "rpstructclass.h"
-#include "rpcom.h"
-#include "rpdatablob.h"
+#include "duilib.hpp"
+#include "rpenum.hpp"
+#include "rpstructclass.hpp"
+#include "rpcom.hpp"
+#include "rpdatablob.hpp"
 
 extern "C" HRESULT __stdcall RP_CFolderThumbnail_GetCoordinates(POSITION pos, DWORD *x, DWORD *y)
 {

@@ -1,4 +1,4 @@
-#include "duilib.h"
+#include "duilib.hpp"
 
 HMODULE g_twinUI;
 RP_CDUIContext* g_DUIContext;

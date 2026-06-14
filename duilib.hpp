@@ -1,7 +1,7 @@
 #ifndef DUILIB_H
 #define DUILIB_H
 
-#include "common.h"
+#include "common.hpp"
 #include <Uxtheme.h>
 
 struct ExclusiveSRW
