@@ -1,5 +1,6 @@
 #pragma once
 #include "common.hpp"
+#include "rpenum.hpp"
 
 struct BAND_DEPENDENCY
 {
